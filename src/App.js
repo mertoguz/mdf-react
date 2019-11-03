@@ -1,12 +1,20 @@
 import React from 'react';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      Movie Details Finder will be here.
-    </div>
-  );
+//components
+import Search from './components/Search';
+
+class App extends React.Component {
+  render () {
+    return (
+      <div className="App">
+        <header className="header">
+          Search a movie by name.
+        </header>
+        <Search />
+      </div>
+    );
+  }
 }
 
 export default App;
