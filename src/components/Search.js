@@ -9,20 +9,14 @@ export default class Search extends React.Component {
     }
 
     //bind methods
-    this.fetchMovieDetails = this.fetchMovieDetails.bind(this);
     this.inputChanged = this.inputChanged.bind(this);
   }
 
-  fetchMovieDetails (searchQuery) {
-    fetch(`https://www.omdbapi.com/?t=${searchQuery}&apikey=c5d05685`)
-      .then((response) => { return response.json() })
-      .then((response) => { console.log(response) })
-      .then(() => {
-        this.setState({
-          searchQuery: '',
-        })
-      });
-  };
+  clearSearchQuery () {
+    this.setState({
+      searchQuery: '',
+    });
+  }
 
   inputChanged (event) {
     this.setState({
@@ -42,7 +36,7 @@ export default class Search extends React.Component {
             autoComplete="off"
           />
           <button className="search-button"
-            onClick={() => {this.fetchMovieDetails(this.state.searchQuery)}}
+            onClick={() => {this.props.fetchMovieDetails(this.state.searchQuery, this.clearSearchQuery.bind(this))}}
           >
             Details
           </button>
