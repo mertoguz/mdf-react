@@ -1,0 +1,11 @@
+.movie-details {
+    margin: 25px 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+}
+
+.movie-detail-header {
+    font-size: 20px;
+    font-weight: 700;
+}
